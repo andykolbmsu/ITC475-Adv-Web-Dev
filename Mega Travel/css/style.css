@@ -1,0 +1,151 @@
+/*      Andy Kolb           */
+/*      Mega Travel         */
+/*      style.css           */
+/*      8/27/2022           */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+header {
+    background-color: #add8e6;
+    border-bottom:15px solid #d3d3d3;
+    height: 140px;
+    text-align: center;
+    transition: ease-in-out  all 0.5s;
+}
+    
+.mega-logo {
+    height: 140px;
+}
+
+nav {
+    background-color: #000000;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    height:58px;
+}
+nav ul li {
+    display: inline-block;
+    padding: 15px;
+}
+nav a {
+    display: inline-block;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+nav a:hover {
+    color: #ffa500;
+}
+
+.container {
+    width: auto;
+    padding: 10px;
+}
+
+.package-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+.package {
+    flex: 100%;
+}
+.package-frame {
+    border: 1px solid #000000;
+    margin:5px;
+    padding:10px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.package-image {
+    background-color:#d3d3d3;
+    background-size: cover;
+    background-position: center;
+    height:350px;
+    margin-bottom: 18px;
+}
+.package-location {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.package-original-price, .package-new-price, .package-savings {
+    font-size: 14px;
+}
+.package-original-price {
+    color: #999999;
+}
+.package-new-price strong {
+    text-decoration: underline;
+}
+.package-savings {
+    color: green;
+}
+
+.package:hover .package-frame {
+    background-color: #000000;
+}
+.package:hover .package-location, .package:hover .package-new-price {
+    color: #ffffff;
+}
+
+footer {
+    color: #ffffff;
+    background-color: #000000;;
+    padding: 10px;
+}
+
+
+/*      TABLET       */
+
+@media only screen and (min-width: 600px) {
+    header {
+        text-align: left;
+    }
+    nav {
+        background-color: #ffffff;
+    }
+    nav a {
+        color: #000000;
+    }
+    nav a:hover {
+        color: red;
+        transform: translateY(-8px);
+    }
+    .container {
+        width: 540px;
+        margin: 0 auto;
+    }
+    .package {
+        flex: 50%;
+    }
+    .package-image {
+        height:250px;
+    }
+
+}
+
+
+/*      DESKTOP       */
+
+@media only screen and (min-width: 920px) {
+    .container {
+        width: 800px;
+        margin: 0 auto;
+    }
+    .package {
+        flex: 25%;
+    }
+    .package-image {
+        height:200px;
+    }
+
+}
