@@ -104,6 +104,20 @@ footer {
 }
 
 
+
+#welcome {
+    display: flex;
+    flex-wrap: wrap;
+}
+#welcomeGreeting {
+    flex: 50%;
+}
+#welcomeTime {
+    flex: 50%;
+    text-align: right;
+}
+
+
 /*      TABLET       */
 
 @media only screen and (min-width: 600px) {
@@ -122,7 +136,7 @@ footer {
     }
     .container {
         width: 540px;
-        /* margin: 0 auto; */
+        margin: 0 auto;
     }
     .package {
         flex: 50%;
@@ -139,7 +153,7 @@ footer {
 @media only screen and (min-width: 920px) {
     .container {
         width: 800px;
-        /* margin: 0 auto; */
+        margin: 0 auto;
     }
     .package {
         flex: 25%;
