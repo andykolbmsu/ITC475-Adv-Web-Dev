@@ -3,10 +3,11 @@
     <!--    Andy Kolb         -->
     <!--    Mega Travel       -->
     <!--    contact.html      -->
-    <!--    8/27/2022         -->
+    <!--    9/29/2022         -->
     <head>
         <title>About Us | Mega Travel</title>
         <link rel="stylesheet" href="css/style.css">
+        <script src="js/activities.js" defer></script>
     </head>
     <body>
 
@@ -28,6 +29,17 @@
                 <h1>Contact an Agent</h1>
             
                <p>We would love to know more about your travel plans. Please fill out this contact form to get in touch with a travel agent.</p>
+
+               <label for="destinations">Destinations</label> 
+               <select name="destinations" id="destinations">
+                    <option value="" selected></option>
+                    <option value="maldives">Maldives, South Asia</option>
+                    <option value="newzealand">New Zealand</option>
+                    <option value="venice">Venice, Italy</option>
+                    <option value="cancun">Cancun, Mexico</option>
+                </select>
+
+                <div id="activities"></div>
 
             </div>
             

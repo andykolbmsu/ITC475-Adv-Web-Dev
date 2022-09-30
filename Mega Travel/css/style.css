@@ -1,7 +1,7 @@
 /*      Andy Kolb           */
 /*      Mega Travel         */
 /*      style.css           */
-/*      8/27/2022           */
+/*      9/29/2022           */
 
 body {
     margin: 0;
@@ -16,7 +16,7 @@ header {
     border-bottom:15px solid #d3d3d3;
     height: 140px;
     text-align: center;
-    transition: ease-in-out  all 0.5s;
+    transition: ease-in-out all 0.5s;
 }
     
 .mega-logo {
@@ -115,6 +115,15 @@ footer {
 #welcomeTime {
     flex: 50%;
     text-align: right;
+}
+
+
+
+#destinations {
+    margin-bottom: 20px;
+}
+#activities {
+    margin-bottom: 20px;
 }
 
 
