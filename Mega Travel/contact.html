@@ -8,6 +8,7 @@
         <title>About Us | Mega Travel</title>
         <link rel="stylesheet" href="css/style.css">
         <script src="js/activities.js" defer></script>
+        <script src="js/contact.js" defer></script>
     </head>
     <body>
 
@@ -21,7 +22,7 @@
                 <li><a href="contact.html">Contact Agent</a></li>
             </ul>
         </nav>
-
+        
         <main>
 
             <div class="container">
@@ -30,16 +31,67 @@
             
                <p>We would love to know more about your travel plans. Please fill out this contact form to get in touch with a travel agent.</p>
 
-               <label for="destinations">Destinations</label> 
-               <select name="destinations" id="destinations">
-                    <option value="" selected></option>
-                    <option value="maldives">Maldives, South Asia</option>
-                    <option value="newzealand">New Zealand</option>
-                    <option value="venice">Venice, Italy</option>
-                    <option value="cancun">Cancun, Mexico</option>
-                </select>
+                <form id="contactForm" action="" method="post">
 
-                <div id="activities"></div>
+                    <div class="formItem">
+                        <label for="firstname">First name</label>
+                        <input name="firstname" type="text">
+                    </div>
+
+                    <div class="formItem">
+                        <label for="lastname">Last name</label>
+                        <input name="lastname" type="text">
+                    </div>
+
+                    <div class="formItem">
+                        <label for="email">Email</label>
+                        <input name="email" type="text">
+                    </div>
+
+                    <div class="formItem">
+                        <label for="phone">Phone number</label>
+                        <input id="phone" name="phone" type="text">
+                    </div>
+
+                    <div class="formItem">
+                        <div style="margin-bottom:5px;">Number of travelers</div>
+                        <div style="margin-bottom: 10px;">
+                            <input id="travelerAdults" name="travelerAdults" type="number" style="max-width:40px;" min="0" placeholder="0">
+                            <label for="travelerAdults">Adults</label>
+                        </div>
+
+                        <div>
+                            <input id="travelerChildren" name="travelerChildren" type="number" style="max-width:40px;" min="0" value="0">
+                            <label for="travelerChildren">Children</label>
+                        </div>
+                    </div>
+
+                    <div class="formItem">
+                        <div style="margin-bottom:5px;">Travel dates</div>
+                        <label for="startDate">Start date</label>
+                        <input id="startDate" type="date">
+                        <label for="endDate">End date</label>
+                        <input id="endDate" type="date">
+                    </div>
+
+                    <div id="destinationsContainer" class="formItem">
+                        <label for="destinations">Destinations</label> 
+                        <select name="destinations" id="destinations">
+                            <option value="" selected></option>
+                            <option value="maldives">Maldives, South Asia</option>
+                            <option value="newzealand">New Zealand</option>
+                            <option value="venice">Venice, Italy</option>
+                            <option value="cancun">Cancun, Mexico</option>
+                        </select>
+                    </div>
+
+                    <div id="activities" class="formItem"></div>
+
+                    <div class="submitContainer">
+                        <input id="submitBtn" type="button" value="Submit"> <input id="clear" type="reset" value="Clear form">
+                    </div>
+
+                </form>
 
             </div>
             

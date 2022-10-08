@@ -1,7 +1,7 @@
 //      Andy Kolb           
 //      Activities Selector      
 //      activities.js          
-//      09/29/2021          
+//      09/29/2022          
 
 let destinations = document.getElementById('destinations');
 let activities = document.getElementById('activities');

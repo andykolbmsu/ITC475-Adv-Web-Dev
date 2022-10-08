@@ -119,12 +119,54 @@ footer {
 
 
 
-#destinations {
-    margin-bottom: 20px;
+
+/* Contact Agent */
+
+#contactForm {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    flex-direction: column;
+
+    margin-bottom: 40px;
+    
 }
-#activities {
-    margin-bottom: 20px;
+
+.formItem {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 40%;
 }
+
+#contactForm input[type=text], #contactForm input[type=date], #contactForm input[type=number], #contactForm select {
+    font-size: 18px;
+    border: 0;
+    background-color: #dddddd;
+    padding:8px;
+}
+#contactForm input[type=text], #contactForm input[type=date], #contactForm select {
+    width: 100%;
+}
+
+#destinationsContainer, #ctivities, .submitContainer {
+    flex: 100%;
+}
+
+#submitBtn, #clear {
+    font-size: 18px;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: ease-in all 0.1s;
+}
+#submitBtn { background-color: #ffa500; }
+#submitBtn:hover { background-color: red; }
+#clear { background-color: #dddddd; }
+#clear:hover { background-color: #999999; }
+
+
 
 
 /*      TABLET       */
@@ -152,6 +194,10 @@ footer {
     }
     .package-image {
         height:250px;
+    }
+
+    #contactForm {
+        flex-direction: row;
     }
 
 }

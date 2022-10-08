@@ -1,7 +1,7 @@
 //      Andy Kolb           
 //      The Welcome Component      
 //      welcome.js          
-//      09/03/2021          
+//      09/03/2022         
 
 let now = new Date();
 let welcomeGreeting = document.getElementById('welcomeGreeting');
