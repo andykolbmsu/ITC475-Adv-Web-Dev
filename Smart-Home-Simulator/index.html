@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--    Andy Kolb                   -->
+    <!--    Smart Home Simulator        -->
+    <!--    index.html                  -->
+    <!--    10/16/2022                  -->
+    <head>
+        <title>Smart Home Simulator | Home</title>
+ 
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="SHORTCUT ICON" type="image/x-icon" href="images/icon.ico">
+
+        <script src="js/smarthome.js" defer></script>
+        <script src="https://kit.fontawesome.com/488bdcee47.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <div><img src="images/shs-logo.png" id="logo" alt="Smart Home Simulator"></div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                        <li><a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="panel">
+            
+            <div id="run-container">
+                <input id="runBtn" type="button" value="Run Simulator" onclick="toggleStatus()">
+            </div>
+
+            <div id="info-container">
+                <div id="status"></div>
+                <div id="current-time"></div>
+            </div>
+
+            <div id="schedule-container">
+
+            </div>
+
+            <div id="floorplan-container">
+                <img id="floorplan" src="images/floor-plan.png" alt="Home floor plan">
+            </div>
+           
+
+        </main>
+
+    </body>
+</html>

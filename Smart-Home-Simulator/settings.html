@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--    Andy Kolb                   -->
+    <!--    Smart Home Simulator        -->
+    <!--    settings.html               -->
+    <!--    10/16/2022                  -->
+    <head>
+        <title>Smart Home Simulator | Home</title>
+ 
+        <link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="SHORTCUT ICON" type="image/x-icon" href="images/icon.ico">
+
+        <script src="js/settings.js" defer></script>
+        <script src="https://kit.fontawesome.com/488bdcee47.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <div><img src="images/shs-logo.png" id="logo" alt="Smart Home Simulator"></div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                        <li><a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="panel">
+            
+            <h1>Settings</h1>
+
+            <p>Choose a device and set the start time and end time to schedule the device.</p>
+
+            <div id="settings-container">
+                <div id="device-container">
+                    <label for="deviceSelect">Device</label>
+                    <select id="deviceSelect" name="device">
+                        <option value="" selected label="Select device"></option>
+                        <option value="Living Room Lamp">Living Room Lamp</option>
+                        <option value="Bedroom #1 Desk Lamp">Bedroom #1 Desk Lamp</option>
+                        <option value="Bedroom #2 Floor Lamp">Bedroom #2 Floor Lamp</option>
+                        <option value="Bathroom Fan">Bathroom Fan</option>
+                        <option value="Washer">Washer</option>
+                        <option value="Dryer">Dryer</option>
+                        <option value="Front Door">Front Door</option>
+                        <option value="Back Door">Back Door</option>
+                        <option value="Garage Door">Garage Door</option>
+                        <option value="Kitchen Fan">Kitchen Fan</option>
+                        <option value="Dining Room Light">Dining Room Light</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="startTime">Start time</label>
+                    <input id="startTime" type="time" name="startTime">
+                </div>
+
+                <div>
+                    <label for="endTime">End time</label>
+                    <input id="endTime" type="time" name="endTime">
+                </div>
+
+            </div>
+
+            <div id="settings-buttons">
+                <input id="addDevice" type="button" value="Save Device" onclick="saveSettings()">
+                <input type="button" value="Remove Device" onclick="removeDevice()">
+                <input type="button" value="Clear Devices" onclick="clearDevices()">
+            </div>
+
+        </main>
+
+    </body>
+</html>
