@@ -46,7 +46,6 @@ function on() {
         let endtime = item.endtime;
         
         if(starttime > endtime) {
-            console.log(starttime + ' ' + endtime + ' ' + current)
             if(starttime <= current || current < endtime) {
                 document.getElementById('token' + n).classList.add('simulatorOn');
                 document.getElementById('deviceRow' + n).classList.add('simulatorOn');    

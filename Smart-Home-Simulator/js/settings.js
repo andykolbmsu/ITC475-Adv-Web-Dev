@@ -8,8 +8,6 @@ let devices = [];
 let devicesJSON = localStorage.getItem('devices');
 if(devicesJSON != null) devices = JSON.parse(devicesJSON);
 
-console.log(JSON.parse(devicesJSON));
-
 //  Settings variables
 let deviceSelect = document.getElementById("deviceSelect");
 let startTime = document.getElementById('startTime');
