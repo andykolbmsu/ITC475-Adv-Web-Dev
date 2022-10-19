@@ -31,7 +31,7 @@
             
                <p>We would love to know more about your travel plans. Please fill out this contact form to get in touch with a travel agent.</p>
 
-                <form id="contactForm" action="" method="post">
+                <form id="contactForm" action="confirm.php" method="post">
 
                     <div class="formItem">
                         <label for="firstname">First name</label>
@@ -69,9 +69,9 @@
                     <div class="formItem">
                         <div style="margin-bottom:5px;">Travel dates</div>
                         <label for="startDate">Start date</label>
-                        <input id="startDate" type="date">
+                        <input id="startDate" name="startDate" type="date">
                         <label for="endDate">End date</label>
-                        <input id="endDate" type="date">
+                        <input id="endDate" name="endDate" type="date">
                     </div>
 
                     <div id="destinationsContainer" class="formItem">

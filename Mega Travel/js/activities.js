@@ -39,7 +39,7 @@ function buildCheckboxes(arr) {
 
     arr.forEach(function(item, i) {
         let n = i + 1;
-        html += '<input type="checkbox" id="activity' + n + '" value="' + item + '">';
+        html += '<input type="checkbox" id="activity' + n + '" name="activity' + n + '" value="' + item + '">';
         html += '<label for="activity' + n + '"> ' + item + '</label><br>';
     });
 
