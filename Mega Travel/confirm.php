@@ -1,14 +1,37 @@
 <?php
 
-$name = $_POST['firstname'] . ' ' . $_POST['lastname'];
-$phone = $_POST['phone'];
-$email = $_POST['email'];
-$adults = $_POST['travelerAdults'];
-$children = $_POST['travelerChildren'];
-$destination = getDestination();
-$startdate = formatDate($_POST['startDate']);
-$enddate = formatDate($_POST['endDate']);
-$activities = getActivities();
+//  Andy Kolb
+//  Mega Travel
+//  confirm.php
+//  10/24/2022
+
+$client = getClient();
+$conn = dbConnect();
+dbInsert($conn, $client);
+
+// Return client array
+function getClient() {
+    $client = array(
+        'name' => getFullName(),
+        'phone' => (isset($_POST['phone'])) ? $_POST['phone'] : '',
+        'email' => (isset($_POST['email'])) ? $_POST['email'] : '',
+        'adults' => (isset($_POST['travelerAdults'])) ? $_POST['travelerAdults'] : '',
+        'children' => (isset($_POST['travelerChildren'])) ? $_POST['travelerChildren'] : '',
+        'destination' => (isset($_POST['destinations'])) ? $_POST['destinations'] : '',
+        'startdate' => (isset($_POST['startDate'])) ? $_POST['startDate'] : '',
+        'enddate' => (isset($_POST['endDate'])) ? $_POST['endDate'] : '',
+        'activities' => getActivities()
+    );
+    return $client;
+}
+
+// Return full name
+function getFullName() {
+    if (isset($_POST['firstname']) && isset($_POST['lastname'])) {
+        return $_POST['firstname'] . ' ' . $_POST['lastname'];
+    }
+    return '';
+}
 
 // Return full destination name
 function getDestination() {
@@ -31,6 +54,7 @@ function formatDate($date='') {
     if($date) {
         return date_format(date_create($date),"F j, Y");
     }
+    return '';
 }
 
 // Return comma-separated activity list
@@ -41,16 +65,34 @@ function getActivities() {
             $activities .= $_POST['activity' . $i] . ', ';
         }
     }
-    return rtrim($activities, ', ');
+    if($activities) {
+        return rtrim($activities, ', ');
+    }
+    return '';
+}
+
+// Return database connection
+function dbConnect() {
+    $conn = new mysqli("localhost", "root", "", "megatravel");
+    if (!$conn) { die("Connection failed: " . mysqli_connect_error()); }
+    return $conn;
+}
+
+// Insert into database
+function dbInsert($conn='',$client=array()) {
+    if($conn && count($client)) {
+        $insert = sprintf(
+            'INSERT INTO client (%s) VALUES ("%s")',
+            implode(',', array_keys($client)),
+            implode('","', array_values($client))
+        );
+        mysqli_query($conn, $insert);
+    }
 }
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <!--    Andy Kolb         -->
-    <!--    Mega Travel       -->
-    <!--    confirm.php       -->
-    <!--    10/18/2022        -->
     <head>
         <title>Mega Travel</title>
         <link rel="stylesheet" href="css/style.css">
@@ -77,15 +119,15 @@ function getActivities() {
             
                 <p>Thank you for submitting your travel agent contact request! Here is the information you submitted:</p>
 
-                <div id="clientDetails">
-                    <p><strong>Client name:</strong> <?php echo $name; ?></p>
-                    <p><strong>Client phone number:</strong> <?php echo $phone; ?></p>
-                    <p><strong>Client email:</strong> <?php echo $email; ?></p>
-                    <p><strong>Number of adults:</strong> <?php echo $adults; ?></p>
-                    <p><strong>Number of children:</strong> <?php echo $children; ?></p>
-                    <p><strong>Destination:</strong> <?php echo $destination; ?></p>
-                    <p><strong>Travel dates:</strong> <?php echo $startdate . ' to ' . $enddate; ?></p>
-                    <p><strong>Interested activities:</strong> <?php echo $activities; ?></p>
+                <div class="clientDetails">
+                    <p><strong>Client name:</strong> <?php echo $client['name']; ?></p>
+                    <p><strong>Client phone number:</strong> <?php echo $client['phone']; ?></p>
+                    <p><strong>Client email:</strong> <?php echo $client['email']; ?></p>
+                    <p><strong>Number of adults:</strong> <?php echo $client['adults']; ?></p>
+                    <p><strong>Number of children:</strong> <?php echo $client['children']; ?></p>
+                    <p><strong>Destination:</strong> <?php echo getDestination($client['destination']); ?></p>
+                    <p><strong>Travel dates:</strong> <?php echo formatDate($client['startdate']) . ' to ' . formatDate($client['enddate']); ?></p>
+                    <p><strong>Interested activities:</strong> <?php echo $client['activities']; ?></p>
                 </div>
 
                 <p>An agent will be in touch with you soon!</p>

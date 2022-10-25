@@ -169,14 +169,35 @@ footer {
 
 /* Confirmation Page */
 
-#clientDetails {
+.clientDetails {
     border: 1px solid #666666;
     background-color: #f3f3f3;
-    padding: 0 10px;
+    margin-bottom: 20px;
+    padding: 10px;
 }
-#clientDetails p {
+.clientDetails p {
     margin-block-start: 0.6em;
     margin-block-end: 0.6em;
+}
+
+
+/* Admin Page */
+
+.clientItem {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+}
+.span2 {
+    grid-column: auto;
+}
+@media only screen and (min-width: 600px) {
+    .clientItem {
+        grid-template-columns: 1fr 1fr;
+    }
+    .span2 {
+        grid-column: span 2;
+    }
 }
 
 
