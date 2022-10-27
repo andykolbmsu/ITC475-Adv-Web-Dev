@@ -5,6 +5,8 @@
 //  admin.php
 //  10/24/2022
 
+checkAdmin();
+
 $conn = dbConnect();
 
 $query = "SELECT * FROM client";
@@ -39,6 +41,15 @@ function getDestination($destination='') {
         default:
             return '';
     }
+}
+
+// Check if Admin cookie is set
+function checkAdmin() {
+    if(!isset($_COOKIE['admin']) && $_COOKIE['admin']!=1) {
+        header('Location:./login.php');
+        die;
+    }
+    return false;
 }
 
 ?>

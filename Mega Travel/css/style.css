@@ -18,6 +18,9 @@ header {
     text-align: center;
     transition: ease-in-out all 0.5s;
 }
+main {
+    min-height: 300px;
+}
     
 .mega-logo {
     height: 140px;
@@ -198,6 +201,36 @@ footer {
     .span2 {
         grid-column: span 2;
     }
+}
+
+
+/* Login Page */
+
+#loginContainer {
+    border: 1px solid gray;
+    width: min(90%, 400px);
+    /* margin-inline: auto; */
+    margin: 40px auto 40px;
+    padding:1rem;
+}
+#loginContainer form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+#loginContainer input[type=text], #loginContainer input[type=password] {
+    font-size: 18px;
+    border: 0;
+    background-color: #dddddd;
+    padding:8px;
+    width: calc(100% - 16px);
+}
+.errorMsg {
+    border: 1px solid maroon;
+    background-color: rgb(255, 0, 0, 0.2);
+    color: maroon;
+    padding: 10px;
 }
 
 
