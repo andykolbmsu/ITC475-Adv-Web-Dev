@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--    Andy Kolb               -->
+    <!--    The Greatest Race       -->
+    <!--    index.html              -->
+    <!--    11/5/2022               -->
+    <head>
+        <title>The Greatest Race : X-Men Edition</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="js/race.js" defer></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <!-- HOME SCREEN -->
+
+        <div id="homeScreen">
+
+            <div id="homeHeadRed" style="">
+                <div id="homeHeadRedText" style="">The Greatest Race</div>
+            </div>
+            <div id="homeHeadWhite" style="">
+                <div id="homeHeadWhiteText" style="">X-Men Edition</div>
+            </div>
+
+            <div id="msgContainer" class="">
+                <div class="msgCorner" style="border-top:3px solid;border-left:3px solid;"></div>
+                <div class="msgCorner" style="border-top:3px solid;border-right:3px solid;right:0;"></div>
+                <div id="msgText">
+                    Choose two characters for the race.
+                </div>
+                <div class="msgCorner" style="border-bottom:3px solid;border-left:3px solid;"></div>
+                <div class="msgCorner" style="border-bottom:3px solid;border-right:3px solid;right:0;"></div>
+        </div>
+
+            <div id="charContainer" style="">
+
+                <div class="charItem" data-index="captain-britain">
+                    <div class="charBlock">
+                        <div class="charLeftBlock"></div>
+                        <div class="charPortrait" style="  background-image:url('images/portrait/captain-britain.png');
+                        "></div>
+                        <div class="charRightBlock"></div>    
+                    </div>
+                    <div class="charName">Captain Britain</div>
+                </div>
+                    
+                <div class="charItem" data-index="mystique">
+                    <div class="charBlock">
+                        <div class="charLeftBlock"></div>
+                        <div class="charPortrait" style="background-image:url('images/portrait/mystique.png');"></div>
+                        <div class="charRightBlock"></div>
+                    </div>
+                    <div class="charName">Mystique</div>
+                </div>
+                    
+                <div class="charItem" data-index="cyclops">
+                    <div class="charBlock">
+
+                    <div class="charLeftBlock"></div>
+                    <div class="charPortrait" style="  background-image:url('images/portrait/cyclops.png');"></div>
+                    <div class="charRightBlock"></div>
+                    </div>
+                    <div class="charName">Cyclops</div>
+                    </div>
+                    
+                    <div class="charItem" data-index="magneto">
+                        <div class="charBlock">
+
+                    <div class="charLeftBlock"></div>
+                    <div class="charPortrait" style="  background-image:url('images/portrait/magneto.png');"></div>
+                    <div class="charRightBlock"></div>
+                    </div>
+                    <div class="charName">Magneto</div>
+                    </div>
+                    
+                    <div class="charItem" data-index="polaris">
+                        <div class="charBlock">
+
+                    <div class="charLeftBlock"></div>
+                    <div class="charPortrait" style="  background-image:url('images/portrait/polaris.png');
+                    "></div>
+                    <div class="charRightBlock"></div>
+                    </div>
+                    <div class="charName">Polaris</div>
+                    </div>
+                    
+                    
+                    </div>
+                    
+                    <div id="startContainer">
+                        <div class="startBtn">[ START ]</div>
+                    </div>
+
+                    <div id="homeStatLink">
+                        <a class="link" href="statistics.php">[ Statistics ]</a>
+                    </div>
+
+        </div>
+
+
+        <!-- PLAY SCREEN -->
+
+        <div id="playScreen">
+
+            <div id="button" class="buttonStop"></div>
+
+            <div id="player1" class="playerToken"></div>
+            <div id="player2" class="playerToken"></div>
+
+        </div>
+
+
+        <!-- WINNER SCREEN -->
+
+        <div id="winnerScreen">
+
+            <div id="winnerMsg"></div>
+            <div id="winnerResetLink">
+                <a class="link" href="index.html">[ Reset Race ]</a>
+            </div>
+            <div id="winnerStatLink">
+                <a class="link" href="statistics.php">[ Statistics ]</a>
+            </div>
+
+            <div id="winnerBg"></div>
+            <div id="winnerImg"></div>
+
+        </div>
+
+    </body>
+
+</html>
